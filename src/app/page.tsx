@@ -29,7 +29,7 @@ export default function Home() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <h3 className="mt-2 text-lg font-semibold">Dr. Laurie Santos' 5 Favorite Coping Tips</h3>
+          <h3 className="mt-2 text-lg font-semibold">Dr. Laurie Santos&apos; 5 Favorite Coping Tips</h3>
         </div>
 
         {/* Card 2 - YouTube */}
@@ -38,11 +38,11 @@ export default function Home() {
             className="w-full rounded-lg"
             height="240"
             src="https://www.youtube.com/embed/kCQim9VrnDY"
-            title="Dr. Laurie Santos' 5 Favorite Coping Tips"
+            title="Dr. Laurie Santos&apos; 5 Favorite Coping Tips"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <h3 className="mt-2 text-lg font-semibold">Dr. Laurie Santos' 5 Favorite Coping Tips</h3>
+          <h3 className="mt-2 text-lg font-semibold">Dr. Laurie Santos&apos; 5 Favorite Coping Tips</h3>
         </div>
 
         {/* Card 3 - Apple Podcast */}
