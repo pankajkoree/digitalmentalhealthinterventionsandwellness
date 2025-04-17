@@ -1,103 +1,105 @@
-import Image from "next/image";
+"use client";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const data: {
+    title: string;
+    description: string;
+    link: string;
+    media?: {
+      type: "image" | "youtube" | "audio";
+      src: string;
+    };
+  }[] = [
+      {
+        title: "Dr. Laurie Santos' 5 Favorite Coping Tips",
+        description:
+          "Thanks for sharing the transcript! Here's a clean summary of the key messages from Dr. Laurie Santos' talk on coping and mental well-being, especially in tough times like 2020. Dr. Laurie Santos' 5 Evidence-Based Coping Strategies: 1. Exercise - Regular cardio (like 30 mins daily) can be as effective as antidepressants. - Boosts mood and well-being. - Laurie's favorites: hiking and yoga. 2. Gratitude - Training your brain to notice positives improves happiness. - Writing down 3 to 5 things you're grateful for daily boosts well-being in just 2 weeks. 3. Sleep - Crucial for mental health. - Avoid screens before bed to reduce anxiety. - Laurie puts her phone to bed to disconnect. 4. Social Connection - Happy people spend more time with others. - Even virtual connections (Zoom calls, etc.) can lift your mood. 5. Feel Your Emotions (RAIN Technique) - Don't suppress emotions — accept and explore them. - RAIN: Recognize, Accept, Investigate, Nurture. Final Message: We're all in this together — these tools help us flourish and protect mental health even in difficult times.",
+        link: "https://www.youtube.com/watch?v=kCQim9VrnDY&ab_channel=Dr.LaurieSantos",
+        media: {
+          type: "youtube",
+          src: "https://www.youtube.com/embed/kCQim9VrnDY",
+        },
+      },
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {
+        title: "Facing Horrific Family Trauma & Finding Joy After Divorce",
+        description:
+          "This episode addresses deeply personal questions around healing, trauma, and the journey toward finding hope in difficult circumstances. Dr. Duff offers insight into the emotional, psychological, and ethical aspects of sharing personal stories and navigating major life transitions. The complexities of publishing a memoir about trauma and abuse, understanding the impact of complex PTSD and generational trauma, navigating family threats and estrangement with personal boundaries, grieving the loss of an idealized future after divorce, why happiness doesn&apos;t have to look how you thought it would, tips for finding support and resilience as a single parent, and the value of community, therapy, and chosen family.",
+        link: "https://microsoft.com",
+        media: {
+          type: "audio",
+          src: "https://podcasts.apple.com/us/podcast/436-facing-horrific-family-trauma-finding-joy-after/id1094120819?i=1000703163017",
+        },
+      },
+    ];
+  return (
+    <div className="relative flex flex-col justify-center items-center text-center">
+      <h1 className="uppercase text-3xl">
+        Digital Mental Health Interventions and Wellness
+      </h1>
+      <h2 className="text-xl">
+        Find your calm, anonymously. Explore deeper, personally
+      </h2>
+      <p className="xl:w-[40%]">
+        Discover a safe and anonymous space to explore mental health resources
+        and begin your wellness journey. When you are ready for deeper insights
+        and personalized guidance and unlock the pro version to connect your
+        unique challenges with tailored information, all while maintaining the
+        privacy you value
+      </p>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center mt-10">
+        {/* Card 1 - YouTube */}
+        <div className="w-full max-w-[400px] flex flex-col text-center xl:shadow-xl xl:shadow-blue-300 hover:shadow-lg hover:shadow-green-500 p-4 rounded-xl">
+          <iframe
+            className="w-full rounded-lg"
+            height="240"
+            src="https://www.youtube.com/embed/kCQim9VrnDY"
+            title="Dr. Laurie Santos' 5 Favorite Coping Tips"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+          <h3 className="mt-2 text-lg font-semibold">Dr. Laurie Santos' 5 Favorite Coping Tips</h3>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Card 2 - YouTube */}
+        <div className="w-full max-w-[400px] flex flex-col text-center xl:shadow-xl xl:shadow-blue-300 hover:shadow-lg hover:shadow-green-500 p-4 rounded-xl bg-white">
+          <iframe
+            className="w-full rounded-lg"
+            height="240"
+            src="https://www.youtube.com/embed/kCQim9VrnDY"
+            title="Dr. Laurie Santos' 5 Favorite Coping Tips"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+          <h3 className="mt-2 text-lg font-semibold">Dr. Laurie Santos' 5 Favorite Coping Tips</h3>
+        </div>
+
+        {/* Card 3 - Apple Podcast */}
+        <div className="w-full max-w-[400px] flex flex-col text-center xl:shadow-xl xl:shadow-blue-300 hover:shadow-lg hover:shadow-green-500 p-4 rounded-xl bg-white">
+          <iframe
+            className="w-full rounded-lg"
+            height="175"
+            allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+            src="https://embed.podcasts.apple.com/us/podcast/436-facing-horrific-family-trauma-finding-joy-after/id1094120819?i=1000703163017"
+          ></iframe>
+          <h3 className="mt-2 text-lg font-semibold">Facing Horrific Family Trauma & Finding Joy After Divorce</h3>
+        </div>
+
+        {/* Card 4 - Apple Podcast */}
+        <div className="w-full max-w-[400px] flex flex-col text-center xl:shadow-xl xl:shadow-blue-300 hover:shadow-lg hover:shadow-green-500 p-4 rounded-xl bg-white">
+          <iframe
+            className="w-full rounded-lg"
+            height="175"
+            allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+            src="https://embed.podcasts.apple.com/us/podcast/436-facing-horrific-family-trauma-finding-joy-after/id1094120819?i=1000703163017"
+          ></iframe>
+          <h3 className="mt-2 text-lg font-semibold">Facing Horrific Family Trauma & Finding Joy After Divorce</h3>
+        </div>
+      </div>
+
     </div>
   );
 }
