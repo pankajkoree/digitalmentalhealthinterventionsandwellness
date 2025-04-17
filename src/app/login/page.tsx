@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import userImage from "../../../public/user.png";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import axios from "axios";
@@ -45,7 +44,8 @@ const Login = () => {
         <div className="relative flex justify-center xl:top-20">
             <div className="relative flex flex-col justify-center items-center border p-2 xl:w-[22%] gap-4 rounded-xl hover:border-green-300">
                 <div className="relative flex flex-col justify-center items-center w-full top-4">
-                    <Image src={userImage} alt="user" className="xl:w-[60px]" />
+                    <Image src="/user.png" alt="User Image"
+                        width={60} height={60} className="xl:w-[60px]" />
                     <p className="text-xl">Login</p>
                 </div>
 
